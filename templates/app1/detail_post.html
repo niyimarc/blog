@@ -1,0 +1,97 @@
+<!-- extend the base.html to services.html  -->
+{% extends 'app1/base.html' %}
+<!-- I need to load static here again after the extends for the images to show  -->
+{% load static %}
+
+<!-- start the title block  -->
+<!-- this block will display the title of post 
+in the title bar of the browser -->
+{% block title %}
+
+{{ post.post_title }}
+
+{% endblock %}
+<!-- end the title block  -->
+
+<!-- main contents goes here  -->
+{% block content %}
+
+<!-- inner banner -->
+<div class="inner-banner">
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <h4 class="inner-text-title font-weight-bold mb-2">{{ post.post_title }}</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Contact Us</li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- //inner banner -->
+<section class="w3l-bottom-grids-6 py-5" id="services">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-5" style="max-width:600px;">
+            <p class="mt-2">Author: <span>{{ post.post_author }}</span></p>
+            <h3 class="title-style">{{ post.post_title }}</h3>
+            <img src="{{ post.post_img.url }}" alt="" class="img-fluid img-responsive" />
+        </div>
+        <div class="row pt-md-4">
+            <p>{{ post.post_contents }}</p>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="content-item" id="comments">
+    <div class="container">   
+    	<div class="row">
+            <div class="col-sm-8">  
+                
+                <form method="post" action="{% url 'app1:post_detail' post.slug %}">
+                	<h3 class="pull-left">New Comment</h3>
+                	
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-sm-3 col-lg-2 hidden-xs">
+                            	<img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-9 col-lg-10">
+                                {{ comment_form.name }}
+                                {{ comment_form.email }}
+                                {{ comment_form.body }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                            </div>
+                        </div>  	
+                    </fieldset>
+                </form>
+                
+                <h3>{{ comments.count }} comments</h3>
+                
+                <!-- COMMENT STARTS -->
+                {% for comment in comments %}
+                <div class="media">
+                    <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ comment.name }}</h4>
+                        <p>{{ comment.body }}</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li><i class="fa fa-calendar"></i>{{ comment.created_on }}</li>
+                            <li><i class="fa fa-thumbs-up"></i>13</li>
+                        </ul>
+                        <ul class="list-unstyled list-inline media-detail pull-right">
+                            <li class=""><a href="">Like</a></li>
+                            <li class=""><a href="">Reply</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- COMMENT ENDS  -->
+            </div>
+        </div>
+    </div>
+</section>
+{% load sweetify %}
+{% sweetify %}
+{% endblock %}
+

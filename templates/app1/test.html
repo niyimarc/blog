@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+</head>
+<body>
+{% if blog %}
+<!-- create a for loop block  -->
+{% for t in blog %}
+<div>
+    <p>{{t.post_title}}</p>
+    <img src="{{ t.post_img.url }}" alt="image">
+    <p>{{ t.post_contents }}</p>
+    <!-- <h5>{{ t.author }}</h5>
+    <p>{{ t.create_date }}</p> -->
+</div>
+{% endfor %}
+<!-- the for loop ends here  -->
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+
+<!-- create an if block  -->
+
+<section class="w3l-clients py-5 mb-5 mt-4" id="testimonials">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-5" style="max-width:600px;">
+            <p class="mt-2">Testimonials</p>
+            <h3 class="title-style">Happy WIth Customers & <span>Clients</span>
+            </h3>
+        </div>
+        <div id="owl-demo2" class="owl-carousel owl-theme mt-4 py-md-2 mb-md-4">
+{% if testimonial %}
+{% for t in testimonial %}            
+            <div class="item">
+                <div class="testimonial-content">
+                    <div class="testimonial">
+                        <blockquote>
+                            <q>{{ t.testimonial_title }}</q>
+                        </blockquote>
+                        <p>{{ t.testimonial_contents }}</p>
+                    </div>
+                    <div class="bottom-info mt-4">
+                        <a class="comment-img" href="#url"><img src="{{ t.testimonial_img.url }}"
+                                class="img-responsive" alt="placeholder image"></a>
+                        <div class="people-info align-self">
+                            <h3>{{ t.testimonial_name }}</h3>
+                            <p class="identity">{{ t.testimonial_job }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+{% endif %}
+        </div>
+    </div>
+</section>

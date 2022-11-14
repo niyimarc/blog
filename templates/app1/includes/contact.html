@@ -1,0 +1,25 @@
+<div class="contact-form-sec pt-5 mt-md-5">
+    <div class="title-heading-w3 text-center mx-auto mb-5 pb-sm-4" style="max-width:600px">
+        <h3 class="title-style">We will Answer all your <span>Questions</span></h3>
+    </div>
+    <div class="row contact-block align-items-center">
+        <div class="col-md-9 contact-right mt-md-0 mt-4 pl-lg-4 m-auto">
+            <form method="post" class="signin-form">
+                
+                <div class="input-grids">
+                    {{contactform.contact_name}}
+                    {{contactform.contact_email}}
+                    {{contactform.contact_subject}}
+                </div>
+                <div class="form-input">
+                    <!-- <textarea name="w3lMessage" id="w3lMessage" placeholder="Type your message here*"
+                        required=""></textarea> -->
+                    {{contactform.contact_contents}}
+                    {% csrf_token %}
+                </div>
+                <button class="btn btn-style mt-sm-3">Send Message</button>
+
+            </form>
+        </div>
+    </div>
+</div>

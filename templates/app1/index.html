@@ -1,0 +1,258 @@
+<!-- extend the base.html to index.html  -->
+{% extends 'app1/base.html' %}
+<!-- I need to load static here again after the extends for the images to show  -->
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+    <!--//header-->
+
+    <!-- banner section -->
+    <section id="home" class="w3l-banner py-5">
+        <div class="banner-image">
+
+        </div>
+        <div class="banner-content">
+            <div class="container pt-5 pb-md-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6 pt-md-0 pt-4">
+                        <h3 class="mb-sm-4 mb-3 title">We build your
+                            Best <span class="d-block-res">F<span class="type-js"><span
+                                        class="text-js">uture!</span></span></span></h3>
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+                            quia consequuntur magni dolores eos qui seequi.</p>
+                        <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+                            <a class="btn btn-style" href="{% url 'app1:services' %}">View our Works</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 banner-right mt-lg-4 mt-0 text-right offset-lg-1">
+                        <img class="img-fluid" src="{% static 'app1/images/banner2.jpg' %}" alt="My Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banner section -->
+
+    <!-- banner bottom section -->
+    <section class="about-section py-5">
+        <div class="container py-lg-5 py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3">Who we are</h5>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
+                                laudan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fas fa-drafting-compass" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3">How we Work</h5>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
+                                laudan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="about-single p-3 d-flex justify-content-between">
+                        <div class="about-icon mr-3">
+                            <i class="fas fa-industry" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3">What we do</h5>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque
+                                laudan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banner bottom section -->
+
+    <!-- about section -->
+    <section class="w3l-aboutblock pt-4 pb-5">
+        <div class="container pb-md-5 pb-sm-4">
+            <div class="row">
+                <div class="col-lg-6 left-wthree-img mt-lg-0 mt-5 order-lg-first order-last">
+                    <img class="img-fluid img-responsive" src="{% static 'app1/images/about.png' %}" alt=" ">
+                </div>
+                <div class="col-lg-6 about-right-faq align-self pl-lg-5 mt-xl-4 order-lg-last order-first">
+                    <h3 class="text-bgs mb-md-3 mb-2">Since <span>2000</span></h3>
+                    <h3 class="title-style">We Have <span>30+</span> Years Industrial Experience</h3>
+                    <p class="ab-text mt-4 pt-lg-2">"Orem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Non quae, fugiat".</p>
+                    <p class="mt-4">Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Non quae, fugiat. Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                        ultrices in ligula.</p>
+                    <img class="img-fluid mt-md-5 mt-4 img-dark-color" src="{% static 'app1/images/sign.png' %}" alt=" ">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //about section -->
+
+    <!-- services section -->
+    <section class="w3l-bottom-grids-6 service-w3l-bg py-5" id="services">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-5" style="max-width:600px;">
+                <p class="mt-2 text-white">Our Services</p>
+                <h3 class="title-style text-white">High Performance Services For Multiple <span>Industries</span></h3>
+            </div>
+            <div class="row pt-md-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 grids-feature">
+                    <div class="area-box">
+                        <img class="img-fluid" src="{% static 'app1/images/img1.jpg' %}" alt=" ">
+                        <h4><a href="#feature" class="title-head">Industrial Construction</a></h4>
+                        <p>Amus a ligula quam tesque et libero ut justo, ultrices in. Ut eu leo non. Duis
+                            sed et dolor amet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-sm-5 mt-4">
+                    <div class="area-box active">
+                        <img class="img-fluid" src="{% static 'app1/images/img3.jpg' %}" alt=" ">
+                        <h4><a href="#feature" class="title-head">Mechanical Engineering</a></h4>
+                        <p>Amus a ligula quam tesque et libero ut justo, ultrices in. Ut eu leo non. Duis
+                            sed dolor et amet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-sm-5 mt-4">
+                    <div class="area-box">
+                        <img class="img-fluid" src="{% static 'app1/images/img2.jpg' %}" alt=" ">
+                        <h4><a href="#feature" class="title-head">Electronic Materials</a></h4>
+                        <p>Amus a ligula quam tesque et libero ut justo, ultrices in. Ut eu leo non. Duis
+                            sed dolor et amet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //services section -->
+
+    <!-- image with content section -->
+    <section class="image-with-content py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 content-sec-1">
+                    <h3 class="title-style mb-3">Expert Workers Are Giving Best Services To
+                        Build Your <span>Dream Factory</span></h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit
+                        doloremque laudantium, totam rem aperiam, veritatis et quasi.
+                    </p>
+                    <a class="btn btn-style mt-lg-5 mt-4" href="{% url 'app1:services' %}">Let's Know More</a>
+                </div>
+                <div class="col-lg-6 pl-lg-5 mt-lg-0 mt-5">
+                    <img src="{% static 'app1/images/st1.jpg' %}" alt="product" class="img-responsive">
+                </div>
+            </div>
+            <div class="w3-stats mt-5 pt-4">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6">
+                        <div class="counter">
+                            <div class="timer count-title count-number" data-to="5100" data-speed="1500"></div>
+                            <p class="count-text">Total Projects</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="counter">
+                            <div class="timer count-title count-number" data-to="9716" data-speed="1500"></div>
+                            <p class="count-text">Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-md-0 mt-4">
+                        <div class="counter">
+                            <div class="timer count-title count-number" data-to="7600" data-speed="1500"></div>
+                            <p class="count-text">Cup Of Coffee</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-md-0 mt-4">
+                        <div class="counter border-right-0">
+                            <div class="timer count-title count-number" data-to="967" data-speed="1500"></div>
+                            <p class="count-text">Awards Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //image with content section -->
+
+    <!-- content section -->
+    <section class="w3l-content-sec py-5" id="testimonials">
+        <div class="container py-md-5 py-4">
+            <div class="title-main mb-5" style="max-width:600px;">
+                <p class="mt-2 text-white">Industry</p>
+                <h3 class="title-style text-white">We Provide top industrial <span>Services</span>
+                </h3>
+            </div>
+            <div class="banner-play-w3">
+                <!--//video-->
+                <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center pl-3">
+                    <span class="video-play-icon">
+                        <span class="fa fa-play"></span>
+                    </span>
+                </a>
+                <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                    <iframe src="https://player.vimeo.com/video/13618190" frameborder="0" allow="autoplay; fullscreen"
+                        allowfullscreen></iframe>
+                </div>
+                <!--//video-->
+            </div>
+        </div>
+    </section>
+    <section class="top-content-w3l">
+        <div class="row mx-0">
+            <div class="col-md-3 col-sm-4 col-6 offset-md-3">
+                <div class="grid-content-spe">
+                    <img src="{% static 'app1/images/a1.jpg' %}" class="img-fluid" alt="" />
+                    <div class="content-section-grid">
+                        <h4><a href="{% url 'app1:services' %}">Civil Engineering</a></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6">
+                <div class="grid-content-spe">
+                    <img src="{% static 'app1/images/a2.jpg' %}" class="img-fluid" alt="" />
+                    <div class="content-section-grid">
+                        <h4><a href="{% url 'app1:services' %}">Oil & Gas Engineering</a></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mt-sm-0 mt-4">
+                <div class="grid-content-spe">
+                    <img src="{% static 'app1/images/a3.jpg' %}" class="img-fluid" alt="" />
+                    <div class="content-section-grid">
+                        <h4><a href="{% url 'app1:services' %}">Chemical Research</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //content section -->
+    {% include 'app1/includes/services.html' %}
+    <!-- testimonials section -->
+    {% include 'app1/includes/testimonial.html' %}
+
+    <!-- //testimonials section -->
+
+    <!-- blog section -->
+    {% include 'app1/includes/blog.html' %}
+    <!-- //blog section -->
+
+    {% endblock %}
+    

@@ -1,0 +1,91 @@
+<!-- extend the base.html to contact.html  -->
+{% extends 'app1/base.html' %}
+<!-- I need to load static here again after the extends for the images to show  -->
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+    <!--//header-->
+
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-2">Contact Us</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Contact Us</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+
+    <!-- contact -->
+    <section class="w3l-contact py-5" id="contact">
+        <div class="container py-md-5 py-4 mb-5">
+            <div class="mx-auto" style="max-width:1000px">
+                <div class="row contact-block">
+                    <div class="col-md-5 contact-left">
+                        <h3 class="font-weight-bold mb-md-5 mb-4">Get in touch with us</h3>
+                        <div class="cont-details">
+                            <div class="d-flex contact-grid">
+                                <div class="cont-left text-center mr-3">
+                                    <span class="fa fa-globe"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Company Address</h6>
+                                    <p>10001, 5th Avenue, 12202 street, London.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex contact-grid mt-4 pt-lg-2">
+                                <div class="cont-left text-center mr-3">
+                                    <span class="fa fa-phone"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Call Us</h6>
+                                    <p><a href="tel:+1(21) 234 4567">+1(21) 112 7368</a></p>
+                                </div>
+                            </div>
+                            <div class="d-flex contact-grid mt-4 pt-lg-2">
+                                <div class="cont-left text-center mr-3">
+                                    <span class="fa fa-envelope-open"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Email Us</h6>
+                                    <p><a href="mailto:example@mail.com" class="mail">example@mail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="d-flex contact-grid mt-4 pt-lg-2">
+                                <div class="cont-left text-center mr-3">
+                                    <span class="fa fa-headphones"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Customer Support</h6>
+                                    <p><a href="mailto:info@support.com" class="mail">info@support.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 mt-md-0 mt-4">
+                        <div class="map-iframe">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11593.270381900502!2d1.625295237146618!3d43.412190703604765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aeec35b22ea25d%3A0xfdeadc6df532d0bf!2sLandon%2C%2031450%20Montesquieu-Lauragais%2C%20France!5e0!3m2!1sen!2sin!4v1611816123801!5m2!1sen!2sin"
+                                width="100%" height="400" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- contact form -->
+                {% include 'app1/includes/contact.html' %}
+                <!-- //contact form -->
+            </div>
+        </div>
+    </section>
+    <!-- //contact -->
+
+
+    <!-- footer -->
+    {% endblock %}
