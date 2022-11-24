@@ -8,7 +8,6 @@ from app1.forms import ContactForm, CommentForm
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-import sweetify
 from django.http import HttpResponseRedirect
 
 # Create your views here.
